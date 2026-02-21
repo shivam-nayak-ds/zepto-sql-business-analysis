@@ -1,13 +1,6 @@
 <!-- ================= ZE P T O  SQL  README ================= -->
-<p align="center">
-  <img src="assets/profile.banner.png" alt="Profile Banner" width="100%">
-</p>
 
 <h1 align="center">🚀 Zepto SQL Business Analysis</h1>
-
-<p align="center">
-  <img src="assets/zepto-banner.png" alt="Zepto Banner" width="80%">
-</p>
 
 <p align="center">
   <b>End-to-End SQL Business Analysis Project</b><br>
@@ -97,7 +90,6 @@ using optimized SQL queries.
 
 <hr>
 
-
 <h2>📸 Project Screenshots</h2>
 
 <p align="center">
@@ -109,6 +101,8 @@ using optimized SQL queries.
   <img src="assets/insight3.png" width="45%">
   <img src="assets/insight4.png" width="45%">
 </p>
+
+<hr>
 
 <h2>⚙️ How to Run This Project</h2>
 
