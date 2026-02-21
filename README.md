@@ -1,4 +1,7 @@
 <!-- ================= ZE P T O  SQL  README ================= -->
+<p align="center">
+  <img src="assets/profile.banner.png" alt="Profile Banner" width="100%">
+</p>
 
 <h1 align="center">🚀 Zepto SQL Business Analysis</h1>
 
