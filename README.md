@@ -107,6 +107,17 @@ using optimized SQL queries.
 </p>
 
 <hr>
+<h2>📸 Project Screenshots</h2>
+
+<p align="center">
+  <img src="assets/insight1.png" width="45%">
+  <img src="assets/insight2.png" width="45%">
+</p>
+
+<p align="center">
+  <img src="assets/insight3.png" width="45%">
+  <img src="assets/insight4.png" width="45%">
+</p>
 
 <h2>⚙️ How to Run This Project</h2>
 
