@@ -1,160 +1,54 @@
-<!-- ================= ZE P T O  SQL  README ================= -->
-
-<h1 align="center">🚀 Zepto SQL Business Analysis</h1>
+# ⚡ Zepto-Insight: Quick-Commerce Business Analysis (SQL)
 
 <p align="center">
-  <b>End-to-End SQL Business Analysis Project</b><br>
-  Customer • Orders • Revenue • Delivery • Ratings
+  <img src="https://img.shields.io/badge/Database-MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white" alt="MySQL">
+  <img src="https://img.shields.io/badge/Analysis-SQL_Queries-orange?style=for-the-badge" alt="SQL">
+  <img src="https://img.shields.io/badge/Industry-Quick--Commerce-yellow?style=for-the-badge" alt="Retail">
 </p>
 
-<hr>
+**Zepto-Insight** is a comprehensive SQL-based business intelligence project that simulates a Quick-Commerce ecosystem. By analyzing datasets covering Customers, Orders, Deliveries, and Ratings, this project extracts critical KPIs to drive operational efficiency and revenue growth.
 
-<h2>📌 Project Overview</h2>
 
-<p>
-This project focuses on <b>SQL-based business analysis</b> using a
-<b>Quick Commerce (Zepto-like)</b> dataset.
-The goal is to extract <b>actionable business insights</b> from raw data
-using optimized SQL queries.
-</p>
 
-<hr>
+---
 
-<h2>📊 Business Problems Solved</h2>
+## 🎯 Business Challenges Solved
+I've designed complex SQL queries to answer high-stakes business questions:
+* **Revenue Analytics:** Which product categories are driving 80% of the revenue? (Pareto Analysis)
+* **Logistics Efficiency:** What is the average delivery lag, and which zones have the most delays?
+* **Customer Retention:** Who are our "Power Users" (ordered > 5 times in 30 days)?
+* **Temporal Trends:** Identifying peak ordering windows to optimize delivery partner staffing.
 
-<ul>
-  <li>Which product categories generate the highest revenue?</li>
-  <li>Who are the top customers?</li>
-  <li>How efficient is delivery performance?</li>
-  <li>Which products receive the best ratings?</li>
-  <li>What are peak ordering time slots?</li>
-</ul>
+---
 
-<hr>
+## 🧠 Advanced SQL Techniques Used
+This project isn't just about simple queries. It demonstrates mastery in:
+* **Window Functions:** For ranking top customers and calculating running totals.
+* **CTEs (Common Table Expressions):** For breaking down complex logic into readable blocks.
+* **Joins & Aggregations:** Multi-table joins across 6+ entities.
+* **Case Statements:** For segmenting customers and categorizing delivery speeds.
 
-<h2>🧠 Key Insights</h2>
 
-<ul>
-  <li>📈 Revenue contribution by category & product</li>
-  <li>👥 Customer segmentation based on order behavior</li>
-  <li>🚚 Delivery delay & efficiency analysis</li>
-  <li>⭐ Product rating & customer satisfaction analysis</li>
-  <li>⏰ Time-based order trends</li>
-</ul>
 
-<hr>
+---
 
-<h2>🗂 Dataset Information</h2>
+## 📊 Data Schema
+The analysis is performed across a normalized schema:
+* `customers`: Demographic data and sign-up info.
+* `orders` & `transactions`: Core sales and payment data.
+* `products`: Catalog and category hierarchies.
+* `delivery`: Real-time tracking of dispatch and delivery timestamps.
+* `ratings`: Qualitative feedback for sentiment analysis.
 
-<table border="1" cellpadding="8">
-  <tr>
-    <th>Table Name</th>
-    <th>Description</th>
-  </tr>
-  <tr>
-    <td>customers</td>
-    <td>Customer details & demographics</td>
-  </tr>
-  <tr>
-    <td>products</td>
-    <td>Product catalog & categories</td>
-  </tr>
-  <tr>
-    <td>orders</td>
-    <td>Order-level information</td>
-  </tr>
-  <tr>
-    <td>transactions</td>
-    <td>Payment & revenue data</td>
-  </tr>
-  <tr>
-    <td>delivery</td>
-    <td>Delivery time & performance</td>
-  </tr>
-  <tr>
-    <td>ratings</td>
-    <td>Customer ratings & feedback</td>
-  </tr>
-</table>
+---
 
-<hr>
-
-<h2>🛠 Tools & Technologies</h2>
-
-<ul>
-  <li>🐬 <b>MySQL</b> – SQL querying & analysis</li>
-  <li>📁 <b>CSV Dataset</b></li>
-  <li>🧠 <b>Business Logic & KPIs</b></li>
-  <li>📌 <b>Git & GitHub</b></li>
-</ul>
-
-<hr>
-
-<h2>📸 Project Screenshots</h2>
-
-<p align="center">
-  <img src="assets/insight1.png" width="45%">
-  <img src="assets/insight2.png" width="45%">
-</p>
-
-<p align="center">
-  <img src="assets/insight3.png" width="45%">
-  <img src="assets/insight4.png" width="45%">
-</p>
-
-<hr>
-
-<h2>⚙️ How to Run This Project</h2>
-
-<pre>
-1. Clone the repository
-2. Import CSV files into MySQL
-3. Create database & tables
-4. Run SQL queries step-by-step
-</pre>
-
-<hr>
-
-<h2>📈 Example SQL Queries</h2>
-
-<pre>
-SELECT category, SUM(total_amount) AS revenue
-FROM orders
-GROUP BY category
-ORDER BY revenue DESC;
-</pre>
-
-<hr>
-
-<h2>✨ Project Highlights</h2>
-
-<ul>
-  <li>✔ Business-oriented SQL queries</li>
-  <li>✔ Clean & structured analysis</li>
-  <li>✔ Interview-ready project</li>
-  <li>✔ Recruiter-friendly documentation</li>
-</ul>
-
-<hr>
-
-<h2>📌 Author</h2>
-
-<p>
-<b>Shivam Nayak</b><br>
-Aspiring Data Scientist | SQL • Python • ML
-</p>
-
-<p>
-🔗 GitHub:
-<a href="https://github.com/shivam-nayak-ds" target="_blank">
-github.com/shivam-nayak-ds
-</a>
-</p>
-
-<hr>
-
-<p align="center">
-⭐ If you like this project, don’t forget to star the repository!
-</p>
-
-<!-- ================= END README ================= -->
+## 📈 Sample Insight: Delivery Performance
+```sql
+-- Calculating average delivery time per city to identify bottlenecks
+SELECT 
+    city, 
+    AVG(TIMESTAMPDIFF(MINUTE, order_time, delivery_time)) AS avg_delivery_mins
+FROM delivery d
+JOIN customers c ON d.customer_id = c.id
+GROUP BY city
+ORDER BY avg_delivery_mins DESC;
